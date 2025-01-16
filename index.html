@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyramid</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="start-banner"><h3>CLICK ANYWHERE TO GET STARTED </h3></div>
+    <div class="main-container">
+        <button id="refresh"><i class="fa-solid fa-arrows-rotate"></i></button>
+        <div class="pyramid-container"></div>
+        <div class="button-div">
+            <button class="btn play-btn"><i class="fa-solid fa-play" style="color: #63E6BE;"></i>Play</button>
+            <div class="inputs-box">
+                <input type="number" placeholder="Type row & press enter" id="rows-inp" max="20">
+                <input type="number" placeholder="Delay (ms)" id="delay" >
+                <input type="text" placeholder="Color" id="color">
+            </div>
+            <button class="btn pause-btn"><i class="fa-solid fa-pause" style="color: #FFD43B;"></i>Pause</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
