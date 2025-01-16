@@ -18,7 +18,6 @@ function pyramidbuild(rows){
             // pattern +='$ '
             const circle = document.createElement('div')
             circle.classList.add('circle')
-            circle.style.backgroundColor = color_val
             pyr.appendChild(circle)
         }
         pyramid_container.appendChild(pyr)
@@ -51,6 +50,7 @@ function pyramidbuild(rows){
 // play.addEventListener('click',() =>{
 //     pyramidcolorOverlap()
 // })
+const activecircle = document.querySelector('.pyramid.active .circle')
 
 let timeoutid
 function pyramidcolorOverlap(){
@@ -60,6 +60,7 @@ function pyramidcolorOverlap(){
         pyramids.forEach((pyr, i) => pyr.classList.remove('active')) // Remove active from all
         if (index < pyramids.length) {
             pyramids[index].classList.add('active')
+            // activecircle.style.backgroundColor = color_val
             currentIndex = index
             timeoutids.push(setTimeout(() => activatePyramid((index + 1) % pyramids.length), delay_val))
         }
@@ -116,8 +117,11 @@ delay.addEventListener('input',(e) => {
 // TITLE SCREEN 
 
 const start =document.querySelector('.start-banner')
+const start_head = document.querySelector('.start-banner h3')
 
 document.addEventListener('click',() => {
-    start.style.display = 'none'
+    start.style.opacity = '0'
+    start.style.zIndex = '-4'
+    start_head.style.display = 'none'
     main_container.style.opacity ='1'
 })

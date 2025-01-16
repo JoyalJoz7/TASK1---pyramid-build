@@ -16,7 +16,10 @@
             <div class="inputs-box">
                 <input type="number" placeholder="Type row & press enter" id="rows-inp" max="20">
                 <input type="number" placeholder="Delay (ms)" id="delay" >
-                <input type="text" placeholder="Color" id="color">
+                <div style="display: flex;align-items: center;gap:5px;">
+                    <label for="color" style="color: #fff;"> select color : </label>
+                    <input type="color" placeholder="Color" id="color">
+                </div>
             </div>
             <button class="btn pause-btn"><i class="fa-solid fa-pause" style="color: #FFD43B;"></i>Pause</button>
         </div>
