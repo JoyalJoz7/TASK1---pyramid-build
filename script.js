@@ -2,6 +2,7 @@ const main_container = document.querySelector('.main-container')
 const pyramid_container = document.querySelector('.pyramid-container')
 const play = document.querySelector('.play-btn')
 const pause = document.querySelector('.pause-btn')
+const activecircle = document.querySelector('.pyramid.active .circle')
 
 let timeoutids = []
 let isPaused = false
@@ -50,22 +51,22 @@ function pyramidbuild(rows){
 // play.addEventListener('click',() =>{
 //     pyramidcolorOverlap()
 // })
-const activecircle = document.querySelector('.pyramid.active .circle')
 
 let timeoutid
 function pyramidcolorOverlap(){
+    // if(activecircle){
+    //     activecircle.style.backgroundColor = color_val
+    // }
     const pyramids = document.querySelectorAll('.pyramid-container .pyramid')
     function activatePyramid(index){
         if(isPaused) return
         pyramids.forEach((pyr, i) => pyr.classList.remove('active')) // Remove active from all
         if (index < pyramids.length) {
             pyramids[index].classList.add('active')
-            // activecircle.style.backgroundColor = color_val
             currentIndex = index
             timeoutids.push(setTimeout(() => activatePyramid((index + 1) % pyramids.length), delay_val))
         }
     }
-
     activatePyramid(currentIndex)
 }
 
@@ -106,6 +107,7 @@ const color = document.getElementById('color')
 let color_val = ''
 color.addEventListener('input',(e) => {
     color_val = e.target.value
+    // console.log(color_val)
 })
 
 const delay = document.getElementById('delay')
